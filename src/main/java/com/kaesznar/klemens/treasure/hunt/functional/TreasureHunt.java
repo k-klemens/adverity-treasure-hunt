@@ -50,7 +50,7 @@ public class TreasureHunt {
       return "NO TREASURE";
     }
 
-    historyBuilder.append(currentRow + " " + currentColumn).append("\n");
+    historyBuilder.append(currentRow).append(" ").append(currentColumn).append("\n");
 
     //if -> break the recursion because the nextClue and CurrentClue are the same
     if (currentRow == nextRowClue && currentColumn == nextColumnClue) {
