@@ -4,30 +4,37 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TreasureHuntUtilTest {
 
-  private String nonIntegerStringMapFixture = "34 21 32 41 25" + '\n' +
-      "14 42 43 14 31" + '\n' +
-      "54 45 kk 42 23" + '\n' +
-      "33 15 51 31 35" + '\n' +
-      "21 52 33 13 23";
+  private String nonIntegerStringMapFixture;
+  private String correctStringMapFixture;
+  private int[][] correctIntMap;
 
-  private String correctStringMapFixture = "34 21 32 41 25" + '\n' +
-      "14 42 43 14 31" + '\n' +
-      "54 45 52 42 23" + '\n' +
-      "33 15 51 31 35" + '\n' +
-      "21 52 33 13 23";
+  @BeforeEach
+  public void beforeEach() {
+    nonIntegerStringMapFixture = "34 21 32 41 25" + '\n' +
+        "14 42 43 14 31" + '\n' +
+        "54 45 kk 42 23" + '\n' +
+        "33 15 51 31 35" + '\n' +
+        "21 52 33 13 23";
 
-  private int[][] correctIntMap = new int[][]{
-      {34, 21, 32, 41, 25},
-      {14, 42, 43, 14, 31},
-      {54, 45, 52, 42, 23},
-      {33, 15, 51, 31, 35},
-      {21, 52, 33, 13, 23}
-  };
+    correctStringMapFixture = "34 21 32 41 25" + '\n' +
+        "14 42 43 14 31" + '\n' +
+        "54 45 52 42 23" + '\n' +
+        "33 15 51 31 35" + '\n' +
+        "21 52 33 13 23";
 
+    correctIntMap = new int[][]{
+        {34, 21, 32, 41, 25},
+        {14, 42, 43, 14, 31},
+        {54, 45, 52, 42, 23},
+        {33, 15, 51, 31, 35},
+        {21, 52, 33, 13, 23}
+    };
+  }
 
   @Test
   public void testGetRowClue_givenTwoDigitNumber_ExpectTensDigit() {
@@ -71,7 +78,6 @@ public class TreasureHuntUtilTest {
       TreasureHuntUtil.readTreasureMapFromStdin(5);
     });
   }
-
 
 
 }
