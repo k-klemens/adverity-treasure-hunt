@@ -1,6 +1,5 @@
-package com.kaesznar.klemens.util;
+package com.kaesznar.klemens.treasure.hunt.util;
 
-import com.kaesznar.klemens.treasure.hunt.util.TreasureHuntUtil;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class TreasureHuntUtilTest {
 
-  String nonIntegerStringMap = "34 21 32 41 25" + '\n' +
+  String nonIntegerStringMapFixture = "34 21 32 41 25" + '\n' +
       "14 42 43 14 31" + '\n' +
       "54 45 kk 42 23" + '\n' +
       "33 15 51 31 35" + '\n' +
@@ -21,7 +20,7 @@ public class TreasureHuntUtilTest {
       "33 15 51 31 35" + '\n' +
       "21 52 33 13 23";
 
-  int[][] correctIntMapFixture = new int[][]{
+  int[][] correctIntMap = new int[][]{
       {34, 21, 32, 41, 25},
       {14, 42, 43, 14, 31},
       {54, 45, 52, 42, 23},
@@ -58,14 +57,14 @@ public class TreasureHuntUtilTest {
     System.setIn(fakeIn);
 
     int[][] treasureMap = TreasureHuntUtil.readTreasureMapFromStdin(5);
-    Assertions.assertArrayEquals(correctIntMapFixture, treasureMap);
+    Assertions.assertArrayEquals(correctIntMap, treasureMap);
   }
 
   @Test
   public void testReadTreasureMapFromStdin_givenNonIntegerStringMap_ExpectNumberFormatException()
       throws IOException {
     //given - faking the input stream
-    InputStream fakeIn = new ByteArrayInputStream(nonIntegerStringMap.getBytes());
+    InputStream fakeIn = new ByteArrayInputStream(nonIntegerStringMapFixture.getBytes());
     System.setIn(fakeIn);
 
     Assertions.assertThrows(NumberFormatException.class, () -> {
