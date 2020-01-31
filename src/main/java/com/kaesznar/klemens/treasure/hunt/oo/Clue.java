@@ -2,32 +2,35 @@ package com.kaesznar.klemens.treasure.hunt.oo;
 
 import com.kaesznar.klemens.treasure.hunt.util.TreasureHuntUtil;
 
+/**
+ * Class storing information of a clue.
+ */
 public class Clue {
 
-  private int nextRowClue;
-  private int nextColumnClue;
+  private int rowClue;
+  private int columnClue;
 
   public Clue(int clueNumber) {
-    this.nextRowClue = TreasureHuntUtil.getRowClue(clueNumber);
-    this.nextColumnClue = TreasureHuntUtil.getColumnClue(clueNumber);
+    this.rowClue = TreasureHuntUtil.getRowClue(clueNumber);
+    this.columnClue = TreasureHuntUtil.getColumnClue(clueNumber);
   }
 
-  public Clue(int nextRowClue, int nextColumnClue) {
-    this.nextRowClue = nextRowClue;
-    this.nextColumnClue = nextColumnClue;
+  public Clue(int rowClue, int columnClue) {
+    this.rowClue = rowClue;
+    this.columnClue = columnClue;
   }
 
-  public int getNextRowClue() {
-    return nextRowClue;
+  public int getRowClue() {
+    return rowClue;
   }
 
-  public int getNextColumnClue() {
-    return nextColumnClue;
+  public int getColumnClue() {
+    return columnClue;
   }
 
   @Override
   public String toString() {
-    return nextRowClue + " " + nextColumnClue;
+    return rowClue + " " + columnClue;
   }
 
   @Override
@@ -40,8 +43,8 @@ public class Clue {
       return false;
     }
     Clue clue = (Clue) o;
-    return getNextRowClue() == clue.getNextRowClue() &&
-        getNextColumnClue() == clue.getNextColumnClue();
+    return getRowClue() == clue.getRowClue() &&
+        getColumnClue() == clue.getColumnClue();
   }
 
 }

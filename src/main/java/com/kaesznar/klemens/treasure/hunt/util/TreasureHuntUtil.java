@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
+/**
+ * A class providing static methods to make working with two-dimensional treasure-map arrays and
+ * clues easier.
+ */
 public class TreasureHuntUtil {
 
   /**
@@ -28,11 +32,11 @@ public class TreasureHuntUtil {
 
 
   /**
+   * Reads a given number of lines from Stdin where each lines contains five space separated
+   * integers.
    *
-   * Reads a given number of lines from Stdin where each lines contains five space separated integers.
    * @param rowCount number of rows to read.
    * @return a two-dimensional int-array containing the given integer numbers
-   * @throws IOException
    * @throws NumberFormatException if a given input cannot be parsed to int.
    */
   public static int[][] readTreasureMapFromStdin(int rowCount)

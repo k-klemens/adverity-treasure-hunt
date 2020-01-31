@@ -13,15 +13,15 @@ public class TreasureHuntTest {
   private int[][] treasureMapWithTreasureAt13;
   private String treasureMapWithTreasureAt13History = "1 1\n1 2\n1 3";
 
-  private int[][]  treasureMapWithTreasureAt55;
+  private int[][] treasureMapWithTreasureAt55;
   private String treasureMapWithTreasureAt55History = "3 3\n1 5\n2 5\n3 1\n5 5";
 
-  private int[][]  treasureMapWithTreasureAt43;
+  private int[][] treasureMapWithTreasureAt43;
   private String treasureMapWithTreasureAt43History = "1 1\n5 5\n1 5\n2 1\n4 4\n3 2\n1 3\n2 5\n4 3";
 
-  private int[][]  treasureMapWithOutOfBoundsClues;
+  private int[][] treasureMapWithOutOfBoundsClues;
 
-  private int[][]  treasureMapWithCircle;
+  private int[][] treasureMapWithCircle;
 
 
   @BeforeEach
@@ -80,25 +80,27 @@ public class TreasureHuntTest {
   }
 
   @Test
-  public void testDoRecursiveHunt_givenTreasureMapWithTreasureAt55_ExpectRightHistory(){
+  public void testDoRecursiveHunt_givenTreasureMapWithTreasureAt55_ExpectRightHistory() {
     String computedHistory = TreasureHunt.startRecursiveHunt(treasureMapWithTreasureAt55, 33);
     Assertions.assertEquals(treasureMapWithTreasureAt55History, computedHistory);
   }
 
   @Test
-  public void testDoRecursiveHunt_givenTreasureMapWithTreasureAt43_ExpectRightHistory(){
-    String computedHistory = TreasureHunt.startRecursiveHunt(treasureMapWithTreasureAt43,11);
+  public void testDoRecursiveHunt_givenTreasureMapWithTreasureAt43_ExpectRightHistory() {
+    String computedHistory = TreasureHunt.startRecursiveHunt(treasureMapWithTreasureAt43, 11);
     Assertions.assertEquals(treasureMapWithTreasureAt43History, computedHistory);
   }
 
   @Test
-  public void testDoRecursiveHunt_givenTreasureMapWithOutOfBoundsClues_ExpectException(){
-    Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> TreasureHunt.startRecursiveHunt(treasureMapWithOutOfBoundsClues,11));
+  public void testDoRecursiveHunt_givenTreasureMapWithOutOfBoundsClues_ExpectException() {
+    Assertions.assertThrows(ArrayIndexOutOfBoundsException.class,
+        () -> TreasureHunt.startRecursiveHunt(treasureMapWithOutOfBoundsClues, 11));
   }
 
   @Test
-  public void testDoRecursiveHunt_givenTreasureMapWithCircle_ExpectNoTreasure(){
-    Assertions.assertEquals("NO TREASURE", TreasureHunt.startRecursiveHunt(treasureMapWithCircle,11));
+  public void testDoRecursiveHunt_givenTreasureMapWithCircle_ExpectNoTreasure() {
+    Assertions
+        .assertEquals("NO TREASURE", TreasureHunt.startRecursiveHunt(treasureMapWithCircle, 11));
   }
 
 }

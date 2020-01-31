@@ -74,30 +74,31 @@ public class TreasureMapTest {
   }
 
   @Test
-  public void testDoHunt_givenTreasureMapWithTreasureAt13_ExpectRightHistory(){
+  public void testDoHunt_givenTreasureMapWithTreasureAt13_ExpectRightHistory() {
     String computedHistory = treasureMapWithTreasureAt13.doHunt(new Clue(11));
     Assertions.assertEquals(treasureMapWithTreasureAt13History, computedHistory);
   }
 
   @Test
-  public void testDoHunt_givenTreasureMapWithTreasureAt55_ExpectRightHistory(){
+  public void testDoHunt_givenTreasureMapWithTreasureAt55_ExpectRightHistory() {
     String computedHistory = treasureMapWithTreasureAt55.doHunt(new Clue(33));
     Assertions.assertEquals(treasureMapWithTreasureAt55History, computedHistory);
   }
 
   @Test
-  public void testDoHunt_givenTreasureMapWithTreasureAt43_ExpectRightHistory(){
+  public void testDoHunt_givenTreasureMapWithTreasureAt43_ExpectRightHistory() {
     String computedHistory = treasureMapWithTreasureAt43.doHunt(new Clue(11));
     Assertions.assertEquals(treasureMapWithTreasureAt43History, computedHistory);
   }
 
   @Test
-  public void testDoHunt_givenTreasureMapWithOutOfBoundsClues_ExpectException(){
-    Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> treasureMapWithOutOfBoundsClues.doHunt(new Clue(11)));
+  public void testDoHunt_givenTreasureMapWithOutOfBoundsClues_ExpectException() {
+    Assertions.assertThrows(ArrayIndexOutOfBoundsException.class,
+        () -> treasureMapWithOutOfBoundsClues.doHunt(new Clue(11)));
   }
 
   @Test
-  public void testDoHunt_givenTreasureMapWithCircle_ExpectNoTreasure(){
+  public void testDoHunt_givenTreasureMapWithCircle_ExpectNoTreasure() {
     Assertions.assertEquals("NO TREASURE", treasureMapWithCircle.doHunt(new Clue(11)));
   }
 }

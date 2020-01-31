@@ -2,6 +2,9 @@ package com.kaesznar.klemens.treasure.hunt.functional;
 
 import com.kaesznar.klemens.treasure.hunt.util.TreasureHuntUtil;
 
+/**
+ * A class providing static methods to do a recursive treasure hunt.
+ */
 public class TreasureHunt {
 
   /**

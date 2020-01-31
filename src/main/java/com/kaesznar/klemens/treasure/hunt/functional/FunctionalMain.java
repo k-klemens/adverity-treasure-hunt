@@ -1,7 +1,5 @@
 package com.kaesznar.klemens.treasure.hunt.functional;
 
-import com.kaesznar.klemens.treasure.hunt.oo.Clue;
-import com.kaesznar.klemens.treasure.hunt.oo.TreasureMap;
 import com.kaesznar.klemens.treasure.hunt.util.TreasureHuntUtil;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -15,13 +13,11 @@ public class FunctionalMain {
 
     int[][] treasureMapInput = TreasureHuntUtil.readTreasureMapFromStdin(5);
 
-
-
-    System.out.println(TreasureHunt.startRecursiveHunt(treasureMapInput,11));
+    System.out.println(TreasureHunt.startRecursiveHunt(treasureMapInput, 11));
     System.out.println("---");
-    System.out.println(TreasureHunt.startRecursiveHunt(treasureMapInput,11));
+    System.out.println(TreasureHunt.startRecursiveHunt(treasureMapInput, 11));
     System.out.println("---");
-    System.out.println(TreasureHunt.startRecursiveHunt(treasureMapInput,11));
+    System.out.println(TreasureHunt.startRecursiveHunt(treasureMapInput, 11));
   }
 
   public static void fakeInputStream() {
