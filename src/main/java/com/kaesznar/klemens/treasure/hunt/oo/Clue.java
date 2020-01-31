@@ -1,7 +1,6 @@
 package com.kaesznar.klemens.treasure.hunt.oo;
 
 import com.kaesznar.klemens.treasure.hunt.util.TreasureHuntUtil;
-import java.util.Objects;
 
 public class Clue {
 

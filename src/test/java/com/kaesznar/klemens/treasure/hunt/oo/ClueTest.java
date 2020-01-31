@@ -44,8 +44,13 @@ public class ClueTest {
   }
 
   @Test
-  public void testEquals_givenDifferntClueObjects_ExpectFalse() {
+  public void testEquals_givenDifferentClueObjects_ExpectFalse() {
     Assertions.assertFalse(clue11Fixture.equals(clue12Fixture));
+  }
+
+  @Test
+  public void testEquals_givenStringObject_ExpectFalse() {
+    Assertions.assertFalse(clue11Fixture.equals("test test test"));
   }
 
 }
