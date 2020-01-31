@@ -8,19 +8,19 @@ import org.junit.jupiter.api.Test;
 
 public class TreasureHuntUtilTest {
 
-  String nonIntegerStringMapFixture = "34 21 32 41 25" + '\n' +
+  private String nonIntegerStringMapFixture = "34 21 32 41 25" + '\n' +
       "14 42 43 14 31" + '\n' +
       "54 45 kk 42 23" + '\n' +
       "33 15 51 31 35" + '\n' +
       "21 52 33 13 23";
 
-  String correctStringMapFixture = "34 21 32 41 25" + '\n' +
+  private String correctStringMapFixture = "34 21 32 41 25" + '\n' +
       "14 42 43 14 31" + '\n' +
       "54 45 52 42 23" + '\n' +
       "33 15 51 31 35" + '\n' +
       "21 52 33 13 23";
 
-  int[][] correctIntMap = new int[][]{
+  private int[][] correctIntMap = new int[][]{
       {34, 21, 32, 41, 25},
       {14, 42, 43, 14, 31},
       {54, 45, 52, 42, 23},
